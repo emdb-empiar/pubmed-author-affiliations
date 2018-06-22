@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 """
-test_emdbAuthorAffiliation.py
+test_pubmedAuthorAffiliation.py
 
-Test emdbAuthorAffiliation
+Test pubmedAuthorAffiliation with set lists of Pubmed IDs and DOIs
 
 2016/12/14, Ardan Patwardhan, EMBL-EBI
 
@@ -12,7 +12,7 @@ Version history:
 
 
                                                                                   
-Copyright [2014-2016] EMBL - European Bioinformatics Institute
+Copyright [2014-2018] EMBL - European Bioinformatics Institute
 Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in
 compliance with the License. You may obtain a copy of
@@ -25,11 +25,12 @@ KIND, either express or implied. See the License for the
 specific language governing permissions and limitations
 under the License.
 """
-from emdbAuthorAffiliation import EmdbAuthorAffiliation
+from pubmedAuthorAffiliation import CitationAuthorAffiliation
 import logging
 import unittest
 
-class TestEmdbAuthorAffiliation(unittest.TestCase):
+
+class TestPubmedAuthorAffiliation(unittest.TestCase):
     """
     Find affiliation info for a test set of punmed and doi codes
     """
@@ -43,26 +44,26 @@ class TestEmdbAuthorAffiliation(unittest.TestCase):
         """
             Make test queries to pubmed 
         """
-        emdbAuthorAffiliation = EmdbAuthorAffiliation()
+        emdb_author_affiliation = CitationAuthorAffiliation()
         logging.info('Processing pubmed ID queries')
         for pmid in self.pubmedEntries:
             logging.info('Pubmed ID: %s' % pmid)
             logging.info('JSON output')
-            jsonOut = emdbAuthorAffiliation.entrezQuery(pmid)
-            logging.info(jsonOut) 
+            json_out = emdb_author_affiliation.entrez_query(pmid)
+            logging.info(json_out)
             logging.info('Text output')
-            textOut = emdbAuthorAffiliation.json2Text(jsonOut)
-            logging.info(textOut)
+            text_out = emdb_author_affiliation.json2text(json_out)
+            logging.info(text_out)
         
         logging.info('Processing DOI queries')    
         for doi in self.doiEntries:           
             logging.info('DOI: %s' % doi)
             logging.info('JSON output')
-            jsonOut = emdbAuthorAffiliation.entrezQuery(doi=doi)
-            logging.info(jsonOut) 
+            json_out = emdb_author_affiliation.entrez_query(doi=doi)
+            logging.info(json_out)
             logging.info('Text output')
-            textOut = emdbAuthorAffiliation.json2Text(jsonOut)
-            logging.info(textOut)   
+            text_out = emdb_author_affiliation.json2text(json_out)
+            logging.info(text_out)
             
 
 if __name__ == "__main__":
