@@ -12,7 +12,7 @@ Version history:
 
 
                                                                                   
-Copyright [2014-2016] EMBL - European Bioinformatics Institute
+Copyright [2014-2018] EMBL - European Bioinformatics Institute
 Licensed under the Apache License, Version 2.0 (the
 "License"); you may not use this file except in
 compliance with the License. You may obtain a copy of
@@ -290,49 +290,14 @@ def main():
             an XML file following EMDB XML schema 2.0 and written out to out.xml
                
             """
-    version = "0.1"
+    version = "0.2"
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--pubmedid", help="Pubmed ID")
     parser.add_argument("-d", "--doi", help="DOI")
     parser.add_argument("-f", "--infile", help="Text file with a list of pubmed/doi (they can be mixed)")
     parser.add_argument("-x", "--format", choices=EmdbAuthorAffiliation.outputFormatChoices, help="Format of output. Options json, text (tab separated table, denormalised in the sense that the pubmed ID is repeated on multiple rows if there are multiple authors with affiliations")
     args = parser.parse_args()
-    """
-    parser = argparse.ArgumentParser(description= description)
-    parser.add_argument( '-u','--ump', action='store_true', help='Run tests.')
-    args = parser.parse_args()
 
-    
-    parser = OptionParser(usage = usage, version = version)
-    parser.add_option("-t", "--test", action="store", type="string", metavar="SCHEMA", dest="inputSchema", default = "1.9", help="Schema version of output file - 1.9 or 2.0 [default: %default]")
-    
-    parser.add_option("-o", "--out-schema", action="store", type="string", metavar="SCHEMA", dest="outputSchema", default = "2.0", help="Schema version of output file - 1.9 or 2.0 [default: %default]")
-    parser.add_option("-f", "--out-file", action="store", type="string", metavar="FILE", dest="outputFile", help="Write output to FILE")
-    parser.add_option("-w", "--warning-level", action="store", type="int", dest="warningLevel", default=1, help="Level of warning output. 0 is none, 3 is max, default = 1")
-    (options, args) = parser.parse_args()
-
-    # Check for sensible/supported options
-    if len(args) < 1:
-        sys.exit("No input file specified!")
-    else:
-        inputFile = args[0]
-    if (options.inputSchema != "1.9" and options.outputSchema != "2.0") and (options.inputSchema != "2.0" and options.outputSchema != "1.9"):
-        sys.exit("Conversion from version %s to %s not supported!" % (options.inputSchema, options.outputSchema))   
-        
-    # Call appropriate conversion routine
-    translator = EMDBXMLTranslator()
-    translator.setWarningLevel(options.warningLevel)
-    if (options.inputSchema == "1.9" and options.outputSchema == "2.0"):
-        translator.translate_1_9_to_2_0(inputFile, options.outputFile)
-    elif (options.inputSchema == "1.9" and options.outputSchema == "1.9"):
-        translator.translate_1_9_to_1_9(inputFile, options.outputFile)
-    elif (options.inputSchema == "2.0" and options.outputSchema == "1.9"):
-        translator.translate_2_0_to_1_9(inputFile, options.outputFile)
-    
-    if args.ump == True:
-        logging.basicConfig(level=logging.DEBUG)
-        unittest.main()
-    """
     emdbAuthorAffiliation = EmdbAuthorAffiliation()
     if args.format:
         emdbAuthorAffiliation.setOutputFormat(args.format) 
