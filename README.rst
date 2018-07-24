@@ -20,6 +20,7 @@ Example runs
 ------------
 Pubmed input and JSON output:
 .. code:: bash
+
     python pubmedAuthorAffiliation.py -i 27863242
 
 Output::
