@@ -19,6 +19,11 @@ Command line options
 Example runs
 ------------
 Pubmed input and JSON output:
+
+.. code:: bash
+
+	sff convert file.am -o file.sff
+
 .. code:: bash
 
     python pubmedAuthorAffiliation.py -i 27863242
