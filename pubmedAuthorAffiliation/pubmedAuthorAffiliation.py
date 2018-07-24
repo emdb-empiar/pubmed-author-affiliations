@@ -275,21 +275,24 @@ def main():
             You can either specify a single ID on the command line or a file which contains a list.
 
             Examples:
-            1) Run unit tests
-                python pubmedAuthorAffiliation.py --test 
-
-            Typical run:
-            python emdb_xml_translate.py -f out.xml -i 1.9 -o 2.0 in.xml
-            in.xml is assumed to be a EMDB 1.9 XML file and converted to 
-            an XML file following EMDB XML schema 2.0 and written out to out.xml
+            1) Test code
+               python test_pubmedAuthorAffiliation.py
                
+            2) Pubmed input and JSON output
+               python pubmedAuthorAffiliation.py -i 27863242
+               
+            3) DOI input and text output
+               python pubmedAuthorAffiliation.py -d 10.1016/j.molcel.2016.11.013 -x text
+               
+            4) Input file with mixed DOI and Pubmed. Text output written to a file.
+               python pubmedAuthorAffiliation.py -f emdb-2010.txt -x text > /tmp/out.txt
             """
-    version = "0.2"
+    version = "0.3"
     parser = argparse.ArgumentParser()
     parser.add_argument("-i", "--pubmedid", help="Pubmed ID")
     parser.add_argument("-d", "--doi", help="DOI")
     parser.add_argument("-f", "--infile", help="Text file with a list of pubmed/doi (they can be mixed)")
-    parser.add_argument("-x", "--format", choices=CitationAuthorAffiliation.outputFormatChoices, help="Format of output. Options json, text (tab separated table, denormalised in the sense that the pubmed ID is repeated on multiple rows if there are multiple authors with affiliations")
+    parser.add_argument("-x", "--format", choices=CitationAuthorAffiliation.outputFormatChoices, help="Format of output. Options json (default), text (tab separated table, denormalised in the sense that the pubmed ID is repeated on multiple rows if there are multiple authors with affiliations)")
     args = parser.parse_args()
 
     citation_author_affiliation = CitationAuthorAffiliation()
