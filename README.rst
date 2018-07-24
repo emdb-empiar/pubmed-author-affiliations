@@ -20,15 +20,14 @@ Example runs
 ------------
 Pubmed input and JSON output:
 
-.. code:: bash
-
-	sff convert file.am -o file.sff
-
-.. code:: bash
+.. code-block:: bash
 
     python pubmedAuthorAffiliation.py -i 27863242
 
-Output::
+Output:
+
+.. code-block::
+
     {'articleTitle': 'Decoding Mammalian Ribosome-mRNA States by Translational GTPase Complexes.', 'journalTitle': 'Cell', 'authorList': [{'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Shao', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'S'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Murray', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'J'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Brown', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'A'}, {'firstName': 'n/a', 'institute': 'University of California', 'lastName': 'Taunton', 'affiliation': 'Department of Cellular and Molecular Pharmacology, University of California, San Francisco, San Francisco, CA 94158, USA.', 'country': 'USA', 'initials': 'J'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Ramakrishnan', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK. Electronic address: ramak@mrc-lmb.cam.ac.uk.', 'country': 'UK', 'initials': 'V'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Hegde', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK. Electronic address: rhegde@mrc-lmb.cam.ac.uk.', 'country': 'UK', 'initials': 'RS'}], 'pubmedId': '27863242', 'error': False}
     {'articleTitle': 'Decoding Mammalian Ribosome-mRNA States by Translational GTPase Complexes.', 'journalTitle': 'Cell', 'authorList': [{'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Shao', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'S'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Murray', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'J'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Brown', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK.', 'country': 'UK', 'initials': 'A'}, {'firstName': 'n/a', 'institute': 'University of California', 'lastName': 'Taunton', 'affiliation': 'Department of Cellular and Molecular Pharmacology, University of California, San Francisco, San Francisco, CA 94158, USA.', 'country': 'USA', 'initials': 'J'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Ramakrishnan', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK. Electronic address: ramak@mrc-lmb.cam.ac.uk.', 'country': 'UK', 'initials': 'V'}, {'firstName': 'n/a', 'institute': 'MRC-LMB', 'lastName': 'Hegde', 'affiliation': 'MRC-LMB, Francis Crick Avenue, Cambridge CB2 0QH, UK. Electronic address: rhegde@mrc-lmb.cam.ac.uk.', 'country': 'UK', 'initials': 'RS'}], 'pubmedId': '27863242', 'error': False}
 
