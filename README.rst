@@ -18,7 +18,8 @@ Command line options
 
 Example runs
 ------------
-Pubmed input and JSON output::
+Pubmed input and JSON output:
+.. code:: bash
     python pubmedAuthorAffiliation.py -i 27863242
 
 Output::
@@ -41,7 +42,7 @@ Output::
 Input file with mixed DOI and Pubmed. Text output written to a file::
     python pubmedAuthorAffiliation.py -f emdb-2010.txt -x text > /tmp/out.txt
 
-In this case unrecognized are ignored, e.g.::
+In this case unrecognized lines are ignored, e.g.::
     WARNING:root:processList: id not recognized: id
 
 Code testing
