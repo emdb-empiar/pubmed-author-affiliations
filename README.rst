@@ -8,8 +8,8 @@ outputs the information to file
 
 Command line options
 --------------------
--i pubmedid          Search for author affiliations for single Pubmed ID
---pubmedid pubmedid  Same as ``-i``
+-h, --help                        Show help text
+-i PUBMEDID, --pubmedid PUBMEDID  Search for author affiliations for single Pubmed ID
 -d doi               Search for author affiliations for a single DOI
 --doi doi            Same as ``-d``
 -f file              File with a list of Pubmed IDs and DOIs (they can be mixed). One entry per line.
